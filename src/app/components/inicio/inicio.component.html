@@ -1,0 +1,40 @@
+<header>
+  <app-cabecalho></app-cabecalho>
+</header>
+
+<main class="secao-principal">
+  <div class="interface">
+    <h1>Vamos Aonde?</h1>
+    <p>- Escolha o melhor lugar -</p>
+
+    <div class="caixa-pesquisa">
+      <form (ngSubmit)="buscarPontos()">
+        <div class="selecao">
+          <div class="campo">
+            <select disabled>
+              <option>Bahia(BA)</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <select [(ngModel)]="cidadeSelecionada" name="cidade" required>
+              <option value="" disabled selected>Cidade</option>
+              <option>Salvador</option>
+              <option>Porto Seguro</option>
+              <option>Ilhéus</option>
+              <option>Itacaré</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="botao-entrar">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <app-rodape></app-rodape>
+</footer>

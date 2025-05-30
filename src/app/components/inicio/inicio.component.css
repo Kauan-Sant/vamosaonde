@@ -1,0 +1,211 @@
+header {
+    margin-bottom: 10px;
+}
+
+.secao-principal {
+    width: 80%;
+    height: 80vh;
+
+    margin: auto;
+    margin-bottom: 40px;
+
+    border-radius: 50px;
+
+    
+    background-image: url(https://a.travel-assets.com/findyours-php/viewfinder/images/res70/159000/159391-Salvador-And-Vicinity.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.interface {
+    display: flex;
+    flex-direction: column;
+
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    color: white;
+    text-align: center;
+}
+
+.interface h1 {
+    font-size: 50px;
+}
+
+.interface p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.caixa-pesquisa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 60%;
+    height: 50px;
+
+
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+
+    gap: 20px;
+
+}
+
+.caixa-pesquisa form {
+    display: flex;
+    justify-content: space-between;
+
+
+    width: 100%;
+
+    gap: 10px;
+}
+
+.selecao {
+    display: flex;
+
+    justify-content: space-between;
+
+    width: 60%;
+
+    margin: auto;
+
+
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    border-right: 2px solid var(--cinza);
+
+    padding-right: 30 fpx;
+}
+
+
+.campo label {
+    font-size: 26px;
+
+}
+
+.campo select {
+    width: 150px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+    border: transparent;
+
+    background-color: transparent;
+
+    font-size: 24px;
+    color: var(--preto);
+
+}
+
+.botao-entrar {
+    border: transparent;
+    background-color: var(--azul-fraco);
+    border-radius: 20px;
+}
+
+.botao-entrar i {
+    padding: 5px;
+
+    font-size: 20px;
+    color: var(--branco);
+
+    cursor: pointer;
+
+}
+
+@media (max-width: 768px) {
+    .secao-principal {
+        width: 95%;
+        height: auto;
+        padding: 20px 0;
+        border-radius: 20px;
+        background-position: top;
+    }
+
+    .interface {
+        width: 90%;
+        height: auto;
+        padding: 20px 10px;
+        border-radius: 30px;
+    }
+
+    .interface h1 {
+        font-size: 36px;
+    }
+
+    .interface p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .caixa-pesquisa {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .caixa-pesquisa form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .selecao {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .campo {
+        width: 100%;
+        border: none;
+        padding-right: 0;
+    }
+
+    .campo label {
+        font-size: 18px;
+    }
+
+    .campo select {
+        width: 100%;
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .botao-entrar {
+        align-self: center;
+        padding: 10px 20px;
+    }
+
+    .botao-entrar i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .interface h1 {
+        font-size: 28px;
+    }
+
+    .interface p {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,72 @@
+<header>
+  <app-cabecalho></app-cabecalho>
+</header>
+
+<main>
+
+  <div class="detalhes-ponto" *ngIf="ponto; else carregando" style="padding: 2rem">
+
+    <!--  <img [src]="ponto.fotos[0] || 'https://via.placeholder.com/600x400?text=Sem+imagem'"
+      alt="Foto de {{ ponto.nome }}" /> -->
+
+    <div class="carousel-container" *ngIf="ponto?.fotos?.length">
+      <div class="carousel-slide">
+        <img [src]="ponto.fotos[fotoAtual]" alt="Foto {{ fotoAtual + 1 }}" />
+
+        <button class="nav-button left" (click)="voltarFoto()" aria-label="Anterior">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <button class="nav-button right" (click)="avancarFoto()" aria-label="Próximo">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="dots">
+        <span *ngFor="let foto of ponto.fotos; let i = index" [class.active]="i === fotoAtual" (click)="irParaFoto(i)">
+        </span>
+      </div>
+    </div>
+
+
+
+    <section>
+      <h1>{{ ponto.nome }}</h1>
+      <p><strong></strong>{{ponto.avaliacao}} <i class="bi bi-star-fill"></i> ({{ ponto.totalAvaliacoes }})</p>
+
+      <p class="descricao">
+        Descrição:
+        <span> {{ponto.descricao}}</span>
+      </p>
+
+      <p>
+        Endereço:
+        <span>{{ponto.endereco}}</span>
+      </p>
+
+      <div class="mapa">
+        <google-map [options]="mapOptions" height="100%" width="100%"
+          [center]="{ lat: ponto.localizacao.lat, lng: ponto.localizacao.lng }">
+          <map-marker [position]="{ lat: ponto.localizacao.lat, lng: ponto.localizacao.lng }"></map-marker>
+        </google-map>
+      </div>
+
+      <div class="botao-centralizado">
+        <button *ngIf="ponto.placeId" (click)="abrirNoMaps()">
+          Abrir no Maps <i class="bi bi-geo-alt-fill"></i>
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+
+  <ng-template #carregando>
+    <p>Carregando detalhes...</p>
+  </ng-template>
+
+</main>
+
+<footer>
+  <app-rodape></app-rodape>
+</footer>

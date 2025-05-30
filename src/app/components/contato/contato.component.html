@@ -1,0 +1,83 @@
+<header>
+  <app-cabecalho></app-cabecalho>
+</header>
+
+
+<main>
+  <section class="secao-banner">
+    <h1>Contato</h1>
+    <p>Sugestão, elogio e criticas para nós</p>
+  </section>
+
+  <section class="secao-contato">
+    <div class="mapa">
+      <google-map [center]="center" [zoom]="17" height="400px" width="100%">
+        <map-marker [position]="center" title="Senai Digital"></map-marker>
+      </google-map>
+    </div>
+
+    <div class="formulario">
+      <h2>Escreva abaixo: </h2>
+      <form>
+        <div class="colunas">
+          <div class="linhas">
+
+            <input type="text" placeholder="Nome *" required />
+            <input type="text" placeholder="Sobrenome *" required>
+            <input type="email" placeholder="Email *" required />
+            <input type="tel" name="" id="" placeholder="Telefone *" required>
+            <input type="text" mask="000.000.000-00" placeholder="CPF *" required>
+
+            <select name="" id="" required>
+              <option selected disabled value="">Qual tipo de contato? *</option>
+              <option value="">Sugestão</option>
+              <option value="">Elogio</option>
+              <option value="">Reclamação</option>
+            </select>
+            <select name="" id="" required>
+              <option selected disabled>Como deseja ser contatado? *</option>
+              <option>email</option>
+              <option>telefone</option>
+            </select>
+          </div>
+
+          <textarea placeholder="Digite sua mensagem" rows="6"></textarea>
+
+        </div>
+
+        <p>
+          Os dados serão mantidos em nossa base de dados,
+          só enquanto for desejado por você. A qualquer momento será possivel
+          editar ou remover tais dados. <span><a href="">Termos e Condições</a></span>.
+        </p>
+
+        <div class="termos">
+          <input type="checkbox" id="aceitoTermos">
+          <label for="aceitoTermos" class="checkbox"></label>
+          <label for="aceitoTermos"> Sim, li e aceito os termos.</label>
+        </div>
+
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="info-contato">
+    <div class="contato">
+      <i class="bi bi-geo-alt"></i>
+      <p>Salvador, Bahia, Brasil</p>
+    </div>
+    <div class="contato">
+      <i class="bi bi-telephone"></i>
+      <p>(71) 912345678 <br> Segunda á Sexta</p>
+    </div>
+    <div class="contato">
+      <i class="bi bi-envelope"></i>
+      <p>TravelBuddgmail.com <br> Envie mensagem a qualquer hora!</p>
+    </div>
+  </section>
+</main>
+
+
+<app-rodape></app-rodape>

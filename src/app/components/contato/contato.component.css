@@ -1,0 +1,207 @@
+main {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 10px;
+}
+
+.secao-banner {
+  background-image: url('https://blog.hcchotels.com.br/wp-content/uploads/2024/03/barra-lighthouse-and-beach-in-salvador-bahia-br-2023-11-27-04-52-12-utc-1-1024x682.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--branco);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.secao-banner h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.secao-contato {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 60px;
+  gap: 30px;
+  background-color: var(--branco-fundo);
+}
+
+.mapa {
+  flex: 1 1 45%;
+}
+
+.formulario {
+  flex: 1 1 45%;
+}
+
+.formulario h2 {
+  margin-bottom: 20px;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.formulario textarea,
+.formulario input,
+.formulario select {
+  padding: 10px;
+  border: 1px solid var(--azul-fraco);
+  border-radius: 4px;
+}
+
+.formulario form select {
+  color: var(--cinza);
+}
+
+.colunas {
+  display: flex;
+  gap: 10px;
+}
+
+.linhas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  width: 50%;
+}
+
+form p {
+  color: var(--cinza-fraco);
+  text-align: justify;
+  width: 50%;
+}
+
+.termos {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.termos input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--cinza);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.termos input[type="checkbox"]:checked + .checkbox {
+  border-color: var(--azul);
+  background-color: var(--azul-fraco);
+}
+
+.termos input[type="checkbox"]:checked + .checkbox::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--branco);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.formulario button {
+  width: 100px;
+  margin-left: 10px;
+  padding: 10px;
+  background-color: var(--azul);
+  color: var(--branco);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border: 2px solid var(--azul-fraco);
+  box-shadow: 0 0 5px var(--azul-fraco);
+}
+
+.info-contato {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 40px;
+  background-color: var(--branco);
+  border-top: 1px solid var(--branco);
+}
+
+.info-contato .contato {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  font-size: 14px;
+}
+
+.info-contato i {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.info-contato .contato p {
+  text-align: start;
+}
+
+@media (max-width: 768px) {
+  .secao-contato {
+    padding: 20px 30px;
+    gap: 20px;
+  }
+
+  .mapa,
+  .formulario {
+    flex: 1 1 100%;
+  }
+
+  .colunas {
+    flex-direction: column;
+  }
+
+  .linhas,
+  form p {
+    width: 100%;
+  }
+
+  form p {
+    text-align: left;
+  }
+
+  .info-contato{
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .secao-banner h1 {
+    font-size: 32px;
+  }
+
+  .formulario button {
+    width: 100%;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,242 @@
+main {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  background-color: var(--branco-fundo);
+}
+
+.lista-passeios {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 1rem;
+  margin: 20px;
+  padding: 40px;
+  border-radius: 40px;
+  box-shadow: 0px 0px 20px var(--alaranjado);
+}
+
+.campo-busca {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background-color: var(--branco);
+  box-shadow: 0 2px 6px var(--cinza);
+}
+
+.seletor-uf,
+.seletor-cidade,
+.input-busca {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--azul-fraco);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.seletor-uf:focus,
+.seletor-cidade:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px var(--azul-fraco);
+}
+
+.botao-busca {
+  background-color: var(--azul-fraco);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-busca:hover {
+  background-color: var(--azul-fraco);
+}
+
+.cartao-passeio {
+  display: flex;
+  position: relative;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--cinza-fraco);
+  background-color: var(--branco);
+  gap: 1rem;
+}
+
+.conteudo-passeio {
+  width: 65%;
+}
+
+.imagem-passeio {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.avaliacao-passeio {
+  color: var(--alaranjado);
+  font-weight: bold;
+}
+
+.avaliacao-passeio span {
+  color: var(--cinza);
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.avaliacao-passeio span i {
+  font-size: 1rem;
+}
+
+.titulo-passeio {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.verdetalhes {
+  width: 200px;
+  padding: 0.75rem 1.25rem;
+  right: 0;
+  border: 2px solid var(--azul);
+  border-radius: 7px;
+  color: var(--preto);
+  text-transform: uppercase;
+
+  font-weight: bold;
+  font-size: 10px;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.verdetalhes::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--alaranjado);
+  border-radius: 5px;
+  z-index: -2;
+}
+
+.verdetalhes::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--azul);
+  transition: all 0.5s;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.verdetalhes:hover {
+  border: 3px solid var(--alaranjado);
+}
+
+.verdetalhes:hover::before {
+  width: 100%;
+}
+
+.paginacao {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.paginacao button {
+  background-color: transparent;
+  border: none;
+}
+
+.paginacao button i {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 1000px) {
+  .img-lateral {
+    display: none;
+  }
+
+  .lista-passeios {
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .lista-passeios {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .cartao-passeio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imagem-passeio {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .titulo-passeio {
+    text-align: center;
+  }
+
+  .avaliacao-passeio{
+    display: flex;
+    align-items: center;
+  }
+
+  .paginacao {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .campo-busca {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .seletor-uf,
+  .seletor-cidade,
+  .input-busca {
+    width: 100%;
+  }
+
+  .botao-busca {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}

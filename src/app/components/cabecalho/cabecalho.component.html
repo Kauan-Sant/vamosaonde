@@ -1,0 +1,17 @@
+<div class="header">
+  <div class="menu-toggle" #menuToggle (click)="toggleMenu()">
+    <i class="bi bi-list"></i>
+  </div>
+
+  <img src="/logo.png" alt="logo" class="logo" [class.centered]="menuAberto">
+
+  <nav #navMenu class="nav" [class.active]="menuAberto">
+    <a href="/home"><i class="bi bi-house-fill"> Início</i></a>
+    <a href="/busca"><i class="bi bi-search"> Busca</i></a>
+    <a href="/contato"><i class="bi bi-telephone-fill"> Contato</i></a>
+  </nav>
+
+  <button class="btn-user">
+    <a href="/login"><i class="bi bi-person"> Entrar</i></a>
+  </button>
+</div>

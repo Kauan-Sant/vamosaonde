@@ -1,0 +1,52 @@
+.termos-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: var(--branco);
+  color: var(--preto);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--azul-fraco);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  color: var(--alaranjado);
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: var(--cinza);
+}
+
+a {
+  color: var(--azul);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .terms-container {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}

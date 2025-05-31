@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production && xcopy src\\_redirects dist\\vamosaonde\\ /Y",
+    "build": "ng build --configuration production && cp src/_redirects dist/vamosaonde/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

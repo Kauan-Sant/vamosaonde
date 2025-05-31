@@ -1,0 +1,35 @@
+<main>
+  <div class="interface-login">
+    <div class="caixa-login">
+      <img src="/logo.png" alt="logo">
+      <h2>Entrar</h2>
+
+
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+        <div class="c-input">
+          <input class="c-input" type="email" placeholder="E-mail" formControlName="email" name="email" required>
+          <i class="useresenha bi bi-person"></i>
+        </div>
+        <div class="c-input">
+          <input #inputSenha class="c-input" type="password" placeholder="Senha" formControlName="senha" name="senha"
+            required>
+          <i class="useresenha bi bi-lock"></i>
+          <i id="mostra-senha" [ngClass]="mostrar ? 'bi-eye' : 'bi-eye-slash'" (click)="mostrasenha(inputSenha)"
+            class="bi"></i>
+        </div>
+
+        <div *ngIf="erroLogin" style="color: red;">{{ erroLogin }}</div>
+
+
+        <button type="submit">Acessar</button>
+      </form>
+
+      <p>Não tem cadastro? <a href="/cadastro">registre-se</a></p>
+    </div>  
+  </div>
+
+</main>
+
+<footer>
+  <app-rodape></app-rodape>
+</footer>

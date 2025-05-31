@@ -1,0 +1,47 @@
+<main>
+  <img src="logo.png" alt="logo">
+  <h1>Cadastro</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input type="text" placeholder="Nome" formControlName="nome">
+    <input type="text" placeholder="Sobrenome" formControlName="sobrenome">
+    <input type="text" mask="000.000.000-00" placeholder="CPF" formControlName="cpf">
+    <input type="email" placeholder="Email" formControlName="email">
+
+    <div class="campo-senha">
+      <input #senhaInput type="password" placeholder="Senha" formControlName="senha">
+      <i class="bi" [ngClass]="mostrar ? 'bi-eye' : 'bi-eye-slash'" (click)="mostrasenha(senhaInput)">
+      </i>
+    </div>
+
+    <div class="campo-senha">
+      <input #confirmarSenhaInput type="password" placeholder="Confirmar Senha" formControlName="confirmarSenha">
+      <i class="bi" [ngClass]="mostrar1 ? 'bi-eye' : 'bi-eye-slash'" (click)="mostrasenha1(confirmarSenhaInput)">
+      </i>
+    </div>
+
+    <div
+      *ngIf="form.errors?.['senhasDiferentes'] && (form.get('senha')?.touched || form.get('confirmarSenha')?.touched)"
+      style="color: red;">
+      As senhas não coincidem.
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Registrar</button>
+
+    <p>Ja tem cadastro? <a href="/login">Entrar</a></p>
+
+  </form>
+
+
+  <div *ngIf="mensagemSucesso" style="color: green; margin-top: 10px;">
+    {{ mensagemSucesso }}
+  </div>
+  <div *ngIf="mensagemErro" style="color: red; margin-top: 10px;">
+    {{ mensagemErro }}
+  </div>
+</main>
+
+<footer>
+  <app-rodape></app-rodape>
+</footer>
